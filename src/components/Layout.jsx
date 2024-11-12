@@ -5,11 +5,15 @@ import Footer from "./Footer";
 export default function Layout(){
     return(
         <>
-         <div>
+        <div className="container mx-auto">
             <Navbar/>
+            <div style={{height: "90vh"}}>
             <Outlet/>
-            <Footer/>
             
+            <ToastContainer/>
+            </div>
+           
+            <Footer/>
         </div>
         </>
        
