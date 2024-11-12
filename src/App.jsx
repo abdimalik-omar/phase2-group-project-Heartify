@@ -1,4 +1,5 @@
 import './App.css'
+import VolunteerRegForm from './components/VolunteerRegForm.jsx'
 import ContactUs from './pages/ContactUs'
 
 
@@ -11,19 +12,21 @@ import { BrowserRouter , Routes , Route } from 'react-router-dom'
 function App() {
   return (
     <>
-        <BrowserRouter>
+   App
+        {/* <BrowserRouter>
         <Routes>
-            <Route index element={<Home/>}>
+            <Route index element={<Home/>}> */}
             {/* <Route path="Individual" element={<Individual/>}/>
             <Route path="Organisation" element={<Organisation/>}/>
             <Route path="SignUp" element={<SignUp/>}/>
             <Route path="LogIn" element={<LogIn/>}/> */}
 
-            </Route>
+            {/* </Route>
         </Routes>
-        </BrowserRouter>
+        </BrowserRouter> */}
+        <VolunteerRegForm/>
     </>
   )
 }
 
-export default App
+export default App;
