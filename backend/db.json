@@ -1,0 +1,46 @@
+{"user":[
+    {
+       "first name": "john",
+       "last name":"doe",
+       "email":"john@gmail.com",
+       "telephone": "+254700000000",
+       "county of residence": "zambezi",
+       "volunteer experience": "architecture"
+    },
+    {
+        "first name": "marie",
+        "last name":"hollis",
+        "email":"marie@gmail.com",
+        "telephone": "+254747560570",
+        "county of residence": "kinoo",
+        "volunteer experience": "neutrologist"
+
+    },
+    {
+        "first name": "ann",
+        "last name":"rita",
+        "email":"ann@gmail.com",
+        "telephone": "+254747547650",
+        "county of residence": "uthiru",
+        "volunteer experience": "radiologist"
+
+    }
+
+],
+"organization":[
+    {
+        "name": "baristars",
+        "email": "baristars@gmail.com",
+        "telephone": "+254798475789",
+        "comment": "i love this website"
+    },
+    {
+        "name": "heartify",
+        "email": "baristars@gmail.com",
+        "telephone": "+254798475789",
+        "comment": "i love this website"
+
+    }
+   
+]
+}
