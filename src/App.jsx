@@ -1,5 +1,6 @@
 import './App.css'
 import VolunteerRegForm from './components/VolunteerRegForm.jsx'
+import OrganizationRegForm from './components/OrganizationRegForm.jsx'
 import ContactUs from './pages/ContactUs'
 
 
@@ -25,6 +26,7 @@ function App() {
         </Routes>
         </BrowserRouter> */}
         <VolunteerRegForm/>
+        <OrganizationRegForm/>
     </>
   )
 }

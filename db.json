@@ -1,33 +1,6 @@
 {
   "user": [
     {
-      "first name": "john",
-      "last name": "doe",
-      "email": "john@gmail.com",
-      "telephone": "+254700000000",
-      "county of residence": "zambezi",
-      "volunteer experience": "architecture",
-      "id": "b48e"
-    },
-    {
-      "first name": "marie",
-      "last name": "hollis",
-      "email": "marie@gmail.com",
-      "telephone": "+254747560570",
-      "county of residence": "kinoo",
-      "volunteer experience": "neutrologist",
-      "id": "0d1a"
-    },
-    {
-      "first name": "ann",
-      "last name": "rita",
-      "email": "ann@gmail.com",
-      "telephone": "+254747547650",
-      "county of residence": "uthiru",
-      "volunteer experience": "radiologist",
-      "id": "bb10"
-    },
-    {
       "id": "2fed",
       "firstName": "Kevin",
       "lastName": "Daniel",
@@ -40,18 +13,12 @@
   ],
   "organization": [
     {
-      "name": "baristars",
-      "email": "baristars@gmail.com",
-      "telephone": "+254798475789",
-      "comment": "i love this website",
-      "id": "e35d"
-    },
-    {
-      "name": "heartify",
-      "email": "baristars@gmail.com",
-      "telephone": "+254798475789",
-      "comment": "i love this website",
-      "id": "063a"
+      "id": "e63a",
+      "organizationName": "moringa",
+      "email": "prodigy4614@gmail.com",
+      "telephone": "0707759220",
+      "website": "https://d3xtaarts.worpress.com",
+      "terms": true
     }
   ]
 }
