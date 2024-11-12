@@ -28,4 +28,4 @@ const ContactUs = ()=>{
 </>
     );
 }
-export default Send;
+export default ContactUs;
