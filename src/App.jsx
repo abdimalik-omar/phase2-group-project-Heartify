@@ -1,5 +1,4 @@
 import './App.css'
-main
 import Home from './pages/Home.jsx'
 // import Organisation from '../src/pages/Organisation.jsx'
 // import Individual from '../src/pages/Individual.jsx'
@@ -9,19 +8,15 @@ import { BrowserRouter , Routes , Route } from 'react-router-dom'
 function App() {
   return (
     <>
-        <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-            <Route index element={<Home/>}>
-            {/* <Route path="Individual" element={<Individual/>}/>
-            <Route path="Organisation" element={<Organisation/>}/>
-            <Route path="SignUp" element={<SignUp/>}/>
-            <Route path="LogIn" element={<LogIn/>}/> */}
-
-            </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/OrganizationRegForm" element={<OrganizationRegForm />} />
+          <Route path="/VolunteerRegForm" element={<VolunteerRegForm />} />
         </Routes>
-        </BrowserRouter>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App;
