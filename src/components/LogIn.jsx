@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook for routing
 
 export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Create a navigate function for redirection
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
     console.log("Email:", email);
     console.log("Password:", password);
+
+    // Redirect to a new route (e.g., after successful login)
+    // For now, redirect to a mock dashboard or homepage
+    navigate("/dashboard"); // Change '/dashboard' to the appropriate route
   };
 
   return (
