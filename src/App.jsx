@@ -1,27 +1,25 @@
-import './App.css'
-import Home from './pages/Home.jsx'
-// import Organisation from '../src/pages/Organisation.jsx'
-// import Individual from '../src/pages/Individual.jsx'
-// import SignUp from '../src/pages/SignUp.jsx'
-import { BrowserRouter , Routes , Route } from 'react-router-dom'
+import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import OrganizationRegForm from './components/OrganizationRegForm';
+import VolunteerRegForm from '../src/components/VolunteerRegForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 
 function App() {
   return (
     <>
-        <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-            <Route index element={<Layout/>}>
-            <Route path="Home" element={<Home/>}/>
-            <Route path="Individual" element={<Individual/>}/>
-            <Route path="Organisation" element={<Organisation/>}/>
-            <Route path="SignUp" element={<SignUp/>}/>
-            <Route path="LogIn" element={<LogIn/>}/>
-
-            </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/OrganizationRegForm" element={<OrganizationRegForm />} />
+          <Route path="/VolunteerRegForm" element={<VolunteerRegForm />} />
         </Routes>
-        </BrowserRouter>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
