@@ -1,4 +1,5 @@
 import './App.css'
+main
 import Home from './pages/Home.jsx'
 // import Organisation from '../src/pages/Organisation.jsx'
 // import Individual from '../src/pages/Individual.jsx'
@@ -24,4 +25,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

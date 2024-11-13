@@ -1,0 +1,34 @@
+{
+  "user": [
+    {
+      "id": "2fed",
+      "firstName": "Kevin",
+      "lastName": "Daniel",
+      "email": "prodigy4614@gmail.com",
+      "telephone": "0707759220",
+      "county": "Kiambu",
+      "experience": "yes",
+      "terms": true
+    },
+    {
+      "id": "9dea",
+      "firstName": "Jane",
+      "lastName": "Daniel",
+      "email": "prodigy4614@gmail.com",
+      "telephone": "0707759220",
+      "county": "Kiambu",
+      "experience": "yes",
+      "terms": true
+    }
+  ],
+  "organization": [
+    {
+      "id": "e63a",
+      "organizationName": "moringa",
+      "email": "prodigy4614@gmail.com",
+      "telephone": "0707759220",
+      "website": "https://d3xtaarts.worpress.com",
+      "terms": true
+    }
+  ]
+}
