@@ -3,9 +3,8 @@ body {
   background-image: url('../src/assets/images/backgroungimage.avif'); 
   background-size: cover;       
   background-repeat: no-repeat; 
-  
-
 }
+
 .navbar {
   display: flex;
   align-items: center;
