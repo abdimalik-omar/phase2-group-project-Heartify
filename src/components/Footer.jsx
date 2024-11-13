@@ -1,34 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";  
+
 export default function Footer(){
-    return(
-        <>
-         <div className="container mx-auto row">
+   return(
+      <>
+      <div className="container mx-auto">
+         <div className="row d-flex justify-content-between align-items-center">
+          
             <div className="col-md-4">
-            <ul>
-            <li><Link to="Contact Us"></Link></li>
-           <li><Link to="Contact Us"></Link></li> 
-           <li><Link to="Contact Us"></Link></li> 
-
-            </ul>
-            <div class="copyright col-md-4">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Heartify Website</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                      
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">Felister, Kevin And Abdimalik</a>
-                    </div>
-                </div>
+               <ul className="list-unstyled">
+                  <li><Link to="/ContactUs">Contact Us</Link></li>  
+                  <li><Link to="/ContactUs">Help</Link></li>
+                  <li><Link to="/ContactUs">About Us</Link></li>
+               </ul>
             </div>
 
+           
+            <div className="col-md-4 text-center">
+                <p>&copy; <a className="border-bottom" href="#">Heartify Website</a>, All Rights Reserved.</p>
             </div>
-            
-            
-            
 
-        </div>
-        </>
-       
-    )
+            <div className="col-md-4 text-center text-md-end">
+                <p>Designed By <a className="border-bottom" href="https://htmlcodex.com">Felister, Kevin, and Abdimalik</a></p>
+            </div>
+         </div>
+      </div>
+      </>
+   );
 }

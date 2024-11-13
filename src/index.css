@@ -1,68 +1,111 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
-  margin: 0;
+  background-image: url('../src/assets/images/backgroungimage.avif'); 
+  background-size: cover;       
+  background-repeat: no-repeat; 
+  
+
+}
+.navbar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navbar-icon img {
+  height: 40px;
+  width: 40px;
 }
 
-button {
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: #ddd;
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-auth .signup,
+.navbar-auth .login {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.navbar-auth .signup {
+  background-color: #4CAF50;
+}
+
+.navbar-auth .login {
+  background-color: #008CBA;
+}
+
+.navbar-auth .signup:hover,
+.navbar-auth .login:hover {
+  opacity: 0.8;
+}
+
+
+h2 {
+  color: #333;
+}
+
+div {
+  padding: 2rem;
+}
+
+footer {
+  padding: 20px 0;
+  background-color: #f8f9fa; 
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer .row {
+  padding-top: 10px;
+}
+
+.about-us-section {
+  padding: 40px 0; 
+  background-color: #f8f9fa; 
+}
+
+.about-us-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.about-us-image img {
+  max-width: 100%;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
