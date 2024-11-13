@@ -1,8 +1,5 @@
 import './App.css'
-
-import ContactUs from './pages/ContactUs'
-
-
+main
 import Home from './pages/Home.jsx'
 // import Organisation from '../src/pages/Organisation.jsx'
 // import Individual from '../src/pages/Individual.jsx'
