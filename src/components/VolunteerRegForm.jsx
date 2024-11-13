@@ -10,8 +10,8 @@ const VolunteerRegForm = () => {
     experience: "",
     terms: false,
   });
+  const [formMessage, setFormMessage] = useState("");
 
-  // Handle form changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -20,11 +20,10 @@ const VolunteerRegForm = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.terms) {
-      alert("You must agree to the terms to proceed.");
+      setFormMessage("You must agree to the terms to proceed.");
       return;
     }
 
@@ -34,9 +33,9 @@ const VolunteerRegForm = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
-        alert("Thank you for signing up!");
+        setFormMessage("Thank you for signing up!");
         setFormData({
           firstName: "",
           lastName: "",
@@ -47,11 +46,11 @@ const VolunteerRegForm = () => {
           terms: false,
         });
       } else {
-        alert("There was a problem with your submission.");
+        setFormMessage("There was a problem with your submission.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error submitting form");
+      setFormMessage("Error submitting form. Please try again.");
     }
   };
 
@@ -68,6 +67,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter first name"
           value={formData.firstName}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="lname">Last Name: </label>
@@ -78,6 +78,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter last name"
           value={formData.lastName}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="email">Email: </label>
@@ -88,6 +89,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter your email address"
           value={formData.email}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="tphone">Telephone: </label>
@@ -98,6 +100,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter telephone number"
           value={formData.telephone}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="county">County of Residence: </label>
@@ -108,6 +111,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter County of Residence"
           value={formData.county}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="experience">Volunteer Experience: </label>
@@ -131,6 +135,7 @@ const VolunteerRegForm = () => {
         <br />
         <button type="submit">Sign Up</button>
       </form>
+      {formMessage && <p>{formMessage}</p>}
     </div>
   );
 };
