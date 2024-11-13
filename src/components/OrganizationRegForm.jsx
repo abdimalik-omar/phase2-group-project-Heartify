@@ -27,7 +27,7 @@ const OrganizationRegForm = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/organization", {
+      const response = await fetch("https://phase2-group-project-heartify-backend.onrender.com/organization", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
