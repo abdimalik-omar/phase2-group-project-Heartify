@@ -1,21 +1,32 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import SignUpPage from './components/SignUpPage';
+import LogIn from './components/LogIn';
+import Aboutus from './components/Aboutus'; // Import Aboutus component
+import VolunteerRegForm from './components/VolunteerRegForm'; // Import VolunteerRegForm component
+import OrganizationRegForm from './components/OrganizationRegForm'; // Import OrganizationRegForm component
+import ContactUs from './components/ContactUs'; // Import ContactUs component
 import './App.css'
-import Home from './pages/Home.jsx'
-// import Organisation from '../src/pages/Organisation.jsx'
-// import Individual from '../src/pages/Individual.jsx'
-// import SignUp from '../src/pages/SignUp.jsx'
-import { BrowserRouter , Routes , Route } from 'react-router-dom'
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/OrganizationRegForm" element={<OrganizationRegForm />} />
-          <Route path="/VolunteerRegForm" element={<VolunteerRegForm />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <Routes>
+        {/* Route to Layout that renders Navbar and Footer */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/about" element={<Aboutus />} />
+          <Route path="/contact" element={<ContactUs />} /> {/* Add ContactUs route */}
+          
+          {/* Wrap individual and organization signup pages with Layout */}
+          <Route path="/individual-signup" element={<VolunteerRegForm />} />
+          <Route path="/organization-signup" element={<OrganizationRegForm />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,20 +1,16 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import Footer from "./Footer"; 
-import Aboutus from "./Aboutus";
-import Carousel from "./Carousel";
+import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
     <>
+      <Navbar /> {/* Navbar rendered consistently */}
       <div className="container mx-auto">
-        <Navbar /> 
-        <Carousel/>
-        <Aboutus/>
-        <Outlet />
-        <Footer /> 
+        <Outlet />    {/* Dynamically load page content based on current route */}
       </div>
+      <Footer /> {/* Footer rendered consistently */}
     </>
   );
 }
