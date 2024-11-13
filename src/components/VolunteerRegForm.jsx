@@ -29,7 +29,7 @@ const VolunteerRegForm = () => {
     }
 
     try {
-      const response = await fetch("https://phase2-group-project-heartify-backend.onrender.com/user", {
+      const response = await fetch("http://localhost:3000/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
