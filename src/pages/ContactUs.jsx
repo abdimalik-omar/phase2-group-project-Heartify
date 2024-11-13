@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState} from "react";
 
 const ContactUs = ()=>{
+
+    const [formData, setFormData] = useState({
+        fullname: "",
+        contact_email: "",
+        tphone: "",
+        comments:"",
+        accept: false,
+    
+        
+    })
     return(
 <>
 <div className="contact_us_form">
@@ -29,3 +39,7 @@ const ContactUs = ()=>{
     );
 }
 export default ContactUs;
+
+
+
+
