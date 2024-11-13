@@ -1,34 +1,38 @@
 {
   "user": [
     {
-      "id": "2fed",
-      "firstName": "Kevin",
-      "lastName": "Daniel",
-      "email": "prodigy4614@gmail.com",
-      "telephone": "0707759220",
+      "id": "0c79",
+      "firstName": "test",
+      "lastName": "user1",
+      "email": "testuser1@example.com",
+      "telephone": "1111111111",
       "county": "Kiambu",
-      "experience": "yes",
-      "terms": true
-    },
-    {
-      "id": "9dea",
-      "firstName": "Jane",
-      "lastName": "Daniel",
-      "email": "prodigy4614@gmail.com",
-      "telephone": "0707759220",
-      "county": "Kiambu",
-      "experience": "yes",
+      "experience": "Red Cross",
+      "password": "1",
+      "confirmPassword": "1",
       "terms": true
     }
   ],
   "organization": [
     {
-      "id": "e63a",
-      "organizationName": "moringa",
-      "email": "prodigy4614@gmail.com",
-      "telephone": "0707759220",
-      "website": "https://d3xtaarts.worpress.com",
+      "id": "3876",
+      "organizationName": "testorganization1",
+      "email": "testorg1@example.com",
+      "telephone": "1111111111",
+      "website": "https://test.org2.com",
+      "password": "1",
+      "confirmPassword": "1",
       "terms": true
+    }
+  ],
+  "contactus": [
+    {
+      "id": "1fd5",
+      "fullname": "test user1",
+      "contact_email": "testuser1@example.com",
+      "tphone": "1111111111",
+      "comments": "Good Job",
+      "accept": true
     }
   ]
 }
