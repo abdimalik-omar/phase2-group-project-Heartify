@@ -8,6 +8,8 @@ const VolunteerRegForm = () => {
     telephone: "",
     county: "",
     experience: "",
+    password: "",
+    confirmPassword: "",
     terms: false,
   });
   const [formMessage, setFormMessage] = useState("");
@@ -22,8 +24,13 @@ const VolunteerRegForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.terms) {
       setFormMessage("You must agree to the terms to proceed.");
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      setFormMessage("Passwords do not match.");
       return;
     }
 
@@ -43,6 +50,8 @@ const VolunteerRegForm = () => {
           telephone: "",
           county: "",
           experience: "",
+          password: "",
+          confirmPassword: "",
           terms: false,
         });
       } else {
@@ -122,6 +131,28 @@ const VolunteerRegForm = () => {
           placeholder="Enter volunteer experience"
           value={formData.experience}
           onChange={handleChange}
+        />
+        <br />
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <label htmlFor="confirmPassword">Confirm Password: </label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required
         />
         <br />
         <input
