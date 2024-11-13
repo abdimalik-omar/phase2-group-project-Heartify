@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import image1 from './path/to/image1.png';
-import image2 from './path/to/image2.png';
+import image1 from '../assets/image1.png';
+import image2 from '../assets/image2.png';
 
 function SignUpPage() {
   return (
