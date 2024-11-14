@@ -30,6 +30,7 @@ function App() {
           
           {/* Add routes for the different dashboards */}
           <Route path="/dashboard" element={<IndividualDashboard />} /> {/* Volunteer Dashboard */}
+          <Route path="/organization-dashboard" element={<Organization />} /> {/* Organization Dashboard */}
         </Route>
       </Routes>
     </Router>

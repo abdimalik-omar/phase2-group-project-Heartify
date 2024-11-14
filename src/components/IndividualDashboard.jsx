@@ -5,10 +5,10 @@ import profileImage from '../assets/profile.jpeg';
 const IndividualDashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [opportunities, setOpportunities] = useState([]);
-  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
+  // Fetch volunteer opportunities
   useEffect(() => {
     fetch("http://localhost:3000/organization")
       .then(response => response.json())
@@ -19,15 +19,15 @@ const IndividualDashboard = () => {
       .catch(error => console.error("Error fetching volunteer opportunities:", error));
   }, []);
 
+  // Fetch user data
   useEffect(() => {
     fetch("http://localhost:3000/user")
       .then(response => response.json())
-      .then(data => {
-        setUser(data[0]);
-      })
+      .then(data => setUser(data[0])) // Adjust based on actual user authentication setup
       .catch(error => console.error("Error fetching user data:", error));
   }, []);
 
+  // Apply to an opportunity
   const handleApply = (opportunity) => {
     if (user) {
       const applicationData = {
@@ -49,6 +49,10 @@ const IndividualDashboard = () => {
         .then(response => response.json())
         .then(data => {
           console.log('Application submitted successfully:', data);
+          setUser(prevUser => ({
+            ...prevUser,
+            applications: [...(prevUser.applications || []), applicationData],
+          }));
           alert('Application submitted successfully!');
         })
         .catch(error => {
@@ -58,21 +62,22 @@ const IndividualDashboard = () => {
     }
   };
 
+  // Logout functionality
   const handleLogout = () => {
     setUser(null);
     navigate('/');
   };
 
-  // Delete Account Functionality
+  // Delete Account with Confirmation
   const handleDeleteAccount = () => {
-    if (user) {
+    if (window.confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
       fetch(`http://localhost:3000/user/${user.id}`, {
         method: 'DELETE',
       })
         .then(response => {
           if (response.ok) {
             alert('Account deleted successfully');
-            navigate('/'); // Redirect to the homepage
+            navigate('/'); // Redirect to homepage after deletion
           } else {
             console.error('Error deleting account');
           }
