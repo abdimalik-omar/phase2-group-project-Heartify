@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
-import Iconimage from '../assets/images/Iconimage.avif'; 
+import Heartifylogo from '../assets/images/Heartifylogo.avif'; 
 
 export default function Navbar() {
   return (
     <>
       <nav className="navbar">
         <div className="navbar-icon">
-          <img src={Iconimage} alt="Logo" /> 
+          <img src={Heartifylogo} alt="Logo" /> 
         </div>
         <div className="navbar-links">
           <Link to="/">Home</Link> {/* Home link */}
