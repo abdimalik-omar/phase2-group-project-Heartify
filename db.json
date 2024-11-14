@@ -55,6 +55,18 @@
       "password": "1",
       "confirmPassword": "1",
       "terms": true
+    },
+    {
+      "id": "8961",
+      "firstName": "Felister",
+      "lastName": "Kiragu",
+      "email": "felister.kiragu@student.moringaschool.com",
+      "telephone": "0112130739",
+      "county": "nairobi",
+      "experience": "experienced",
+      "password": "1",
+      "confirmPassword": "1",
+      "terms": true
     }
   ],
   "organization": [
