@@ -29,6 +29,18 @@
           "opportunityTitle": "Volunteer Coordinator",
           "opportunityDescription": "Help organize and coordinate volunteer efforts.",
           "applicationDate": "2024-11-14T12:05:34.140Z"
+        },
+        {
+          "opportunityId": "1",
+          "opportunityTitle": "Volunteer Coordinator",
+          "opportunityDescription": "Help organize and coordinate volunteer efforts.",
+          "applicationDate": "2024-11-14T12:51:05.371Z"
+        },
+        {
+          "opportunityId": "1",
+          "opportunityTitle": "Volunteer Coordinator",
+          "opportunityDescription": "Help organize and coordinate volunteer efforts.",
+          "applicationDate": "2024-11-14T13:34:54.200Z"
         }
       ]
     },
@@ -67,6 +79,54 @@
       "password": "1",
       "confirmPassword": "1",
       "terms": true
+    },
+    {
+      "id": "8caa",
+      "firstName": "Felister",
+      "lastName": "Kiragu",
+      "email": "felister.kiragu@student.moringaschool.com",
+      "telephone": "0112130739",
+      "county": "nairobi",
+      "experience": "experienced",
+      "password": "2",
+      "confirmPassword": "2",
+      "terms": true
+    },
+    {
+      "id": "47a1",
+      "firstName": "Felister",
+      "lastName": "Kiragu",
+      "email": "kiragufelister18@gmail.com",
+      "telephone": "0112130739",
+      "county": "nairobi",
+      "experience": "experienced",
+      "password": "1",
+      "confirmPassword": "1",
+      "terms": true
+    },
+    {
+      "id": "8151",
+      "firstName": "Mary",
+      "lastName": "Njeri",
+      "email": "mary@gmail.com",
+      "telephone": "1234567890",
+      "county": "kiambu",
+      "experience": "java",
+      "password": "10",
+      "confirmPassword": "10",
+      "terms": true
+    },
+    {
+      "id": "839e",
+      "firstName": "Mary",
+      "lastName": "Njeri",
+      "email": "mary@gmail.com",
+      "telephone": "1234567890",
+      "county": "kiambu",
+      "experience": "mary@gmail.com",
+      "password": "10",
+      "confirmPassword": "10",
+      "terms": true
     }
   ],
   "organization": [
@@ -87,6 +147,36 @@
           "location": "Nairobi, Kenya"
         }
       ]
+    },
+    {
+      "id": "0b44",
+      "organizationName": "baristars",
+      "email": "mary@gmail.com",
+      "telephone": "1234567890",
+      "website": "baristars",
+      "password": "10",
+      "confirmPassword": "10",
+      "terms": true
+    },
+    {
+      "id": "6036",
+      "organizationName": "baristars",
+      "email": "baristars@gmail.com",
+      "telephone": "1234567890",
+      "website": "baristars",
+      "password": "11",
+      "confirmPassword": "11",
+      "terms": true
+    },
+    {
+      "id": "4bff",
+      "organizationName": "baristars",
+      "email": "baristars@gmail.com",
+      "telephone": "1234567890",
+      "website": "baristars@gmail.com",
+      "password": "11",
+      "confirmPassword": "11",
+      "terms": true
     }
   ],
   "contactus": []
