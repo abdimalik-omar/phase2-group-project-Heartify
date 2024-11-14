@@ -307,4 +307,31 @@ form p {
   background-color: #0056b3;
 }
 
+/* individual dashboard */
+.individual-dashboard-container{
+  /* background: green; */
+  margin: auto;
+  width: 95%;
+}
+
+.user-profile{
+  float: left;
+  margin-top: 2%;
+  height: 60vh;
+  width: 20vw;
+  background: grey;
+}
+
+.user-profile img{
+  border-radius: 80px;
+  width: 90%;
+}
+
+.content-dashboard{
+margin-top: 2%;
+float: right;
+width: 58vw;
+height: 60vh;
+background: green;
+}
 
