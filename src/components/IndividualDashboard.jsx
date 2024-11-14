@@ -107,7 +107,7 @@ const IndividualDashboard = () => {
         <ul className="contributor-list">
           {[...Array(4)].map((_, index) => (
             <li key={index} className="contributor-card">
-              <div className="image-placeholder">Image {index + 1}</div>
+              <div className="image-placeholder"></div>
               <div className="contributor-info">
                 <h3>Name Placeholder</h3>
                 <p>Contribution Placeholder</p>
