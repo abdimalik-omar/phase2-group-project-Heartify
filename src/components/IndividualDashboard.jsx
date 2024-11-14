@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
+import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/profile.jpeg';
 
 const IndividualDashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [opportunities, setOpportunities] = useState([]);
-  const [selectedOpportunity, setSelectedOpportunity] = useState(null); // Track selected opportunity
-  const [user, setUser] = useState(null); // Store logged-in user details
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-  // Fetch volunteer opportunities from the organization endpoint
   useEffect(() => {
     fetch("http://localhost:3000/organization")
       .then(response => response.json())
@@ -20,18 +19,15 @@ const IndividualDashboard = () => {
       .catch(error => console.error("Error fetching volunteer opportunities:", error));
   }, []);
 
-  // Fetch user data to associate the application with the logged-in user
   useEffect(() => {
     fetch("http://localhost:3000/user")
       .then(response => response.json())
       .then(data => {
-        // Assuming the user is the first user in the list, or you can adjust based on logged-in user
         setUser(data[0]);
       })
       .catch(error => console.error("Error fetching user data:", error));
   }, []);
 
-  // Handle volunteer application
   const handleApply = (opportunity) => {
     if (user) {
       const applicationData = {
@@ -41,14 +37,13 @@ const IndividualDashboard = () => {
         applicationDate: new Date().toISOString(),
       };
 
-      // Send a PATCH request to update the user's data with the application
       fetch(`http://localhost:3000/user/${user.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          applications: [...(user.applications || []), applicationData], // Add the new application to the user's applications
+          applications: [...(user.applications || []), applicationData],
         }),
       })
         .then(response => response.json())
@@ -63,12 +58,27 @@ const IndividualDashboard = () => {
     }
   };
 
-  // Handle logout
   const handleLogout = () => {
-    // Clear any user state (optional)
     setUser(null);
-    // Navigate to home page
     navigate('/');
+  };
+
+  // Delete Account Functionality
+  const handleDeleteAccount = () => {
+    if (user) {
+      fetch(`http://localhost:3000/user/${user.id}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Account deleted successfully');
+            navigate('/'); // Redirect to the homepage
+          } else {
+            console.error('Error deleting account');
+          }
+        })
+        .catch(error => console.error('Error deleting account:', error));
+    }
   };
 
   return (
@@ -80,6 +90,10 @@ const IndividualDashboard = () => {
         <h2>{user ? `${user.firstName} ${user.lastName}` : 'Loading...'}</h2>
         {/* Logout Button */}
         <button onClick={handleLogout}>Logout</button>
+        {/* Delete Account Button */}
+        <button onClick={handleDeleteAccount} className="delete-account-button">
+          Delete Account
+        </button>
       </div>
 
       {/* Content Dashboard */}
@@ -107,7 +121,7 @@ const IndividualDashboard = () => {
         <ul className="contributor-list">
           {[...Array(4)].map((_, index) => (
             <li key={index} className="contributor-card">
-              <div className="image-placeholder">Image {index + 1}</div>
+              <div className="image-placeholder"></div>
               <div className="contributor-info">
                 <h3>Name Placeholder</h3>
                 <p>Contribution Placeholder</p>
