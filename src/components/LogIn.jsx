@@ -42,7 +42,8 @@ export default function LogIn() {
   };
 
   return (
-    <div className="login-container">
+    <div className="form-container">
+      <div className="form-box">
       <h2 className="login-title">Login</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <label>Email</label>
@@ -70,6 +71,7 @@ export default function LogIn() {
       <p className="signup-prompt">
         Not a member yet? <a href="/signup" className="signup-link">Sign up now</a>
       </p>
+      </div>
     </div>
   );
 }

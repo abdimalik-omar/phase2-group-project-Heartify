@@ -64,7 +64,8 @@ const VolunteerRegForm = () => {
   };
 
   return (
-    <div className="volunteer_reg_form">
+    <div className="form-container">
+      <div className="form-box">
       <h1>VOLUNTEER SIGN UP FORM</h1>
       <p>Sign up to access volunteer opportunities that have been posted by different organizations</p>
       <form onSubmit={handleSubmit}>
@@ -167,6 +168,7 @@ const VolunteerRegForm = () => {
         <button type="submit">Sign Up</button>
       </form>
       {formMessage && <p>{formMessage}</p>}
+      </div>
     </div>
   );
 };

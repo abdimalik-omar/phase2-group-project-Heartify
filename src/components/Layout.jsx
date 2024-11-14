@@ -7,7 +7,7 @@ export default function Layout() {
   return (
     <>
       <Navbar /> {/* Navbar rendered consistently */}
-      <div className="container mx-auto">
+      <div className="container">
         <Outlet />    {/* Dynamically load page content based on current route */}
       </div>
       <Footer /> {/* Footer rendered consistently */}
