@@ -1,23 +1,49 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook for routing
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // Create a navigate function for redirection
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const verifyLogin = async (endpoint) => {
+    try {
+      const response = await fetch(endpoint);
+      if (response.ok) {
+        const users = await response.json();
+        // Check if any user in the response matches the entered email and password
+        return users.some(
+          (user) => user.email === email && user.password === password
+        );
+      } else {
+        throw new Error("Failed to fetch data");
+      }
+    } catch (error) {
+      console.error(`Error during login verification at ${endpoint}:`, error);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
 
-    // Redirect to a new route (e.g., after successful login)
-    // For now, redirect to a mock dashboard or homepage
-    navigate("/dashboard"); // Change '/dashboard' to the appropriate route
+    const isUserValid = await verifyLogin("http://localhost:3000/user");
+    const isOrganizationValid = await verifyLogin("http://localhost:3000/organization");
+
+    if (isUserValid) {
+      alert("Login successful!");
+      navigate("/dashboard"); // Redirect to the volunteer dashboard (IndividualDashboard)
+    } else if (isOrganizationValid) {
+      alert("Login successful!");
+      navigate("/organization-dashboard"); // Placeholder for organization dashboard (if added in future)
+    } else {
+      alert("Invalid email or password. Please try again.");
+    }
   };
 
   return (
-    <div className="login-container">
+    <div className="form-container">
+      <div className="form-box">
       <h2 className="login-title">Login</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <label>Email</label>
@@ -45,6 +71,7 @@ export default function LogIn() {
       <p className="signup-prompt">
         Not a member yet? <a href="/signup" className="signup-link">Sign up now</a>
       </p>
+      </div>
     </div>
   );
 }

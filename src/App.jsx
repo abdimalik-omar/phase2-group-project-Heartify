@@ -10,6 +10,7 @@ import ContactUs from './components/ContactUs'; // Import ContactUs component
 import './App.css'
 import Organization from './components/Organization';
 
+
 function App() {
   return (
     <Router>
@@ -21,11 +22,14 @@ function App() {
           <Route path="/Organization" element={<Organization />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/about" element={<Aboutus />} />
-          <Route path="/contact" element={<ContactUs />} /> {/* Add ContactUs route */}
+          <Route path="/contact" element={<ContactUs />} />
           
           {/* Wrap individual and organization signup pages with Layout */}
           <Route path="/individual-signup" element={<VolunteerRegForm />} />
           <Route path="/organization-signup" element={<OrganizationRegForm />} />
+          
+          {/* Add routes for the different dashboards */}
+          <Route path="/dashboard" element={<IndividualDashboard />} /> {/* Volunteer Dashboard */}
         </Route>
       </Routes>
     </Router>

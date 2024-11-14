@@ -1,19 +1,36 @@
 
 body {
   background-image: url('../src/assets/images/backgroungimage.avif'); 
-  background-size: cover;       
-  background-repeat: no-repeat; 
-  
-
+  background-size: cover;      
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center; 
 }
+
+/* Navbar Styling */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 30px 20px;
   background-color: #333;
   color: #fff;
   font-family: Arial, sans-serif;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 10px 5px;
+}
+
+.navbar a:hover {
+  background-color: #555;
 }
 
 .navbar-icon img {
@@ -63,51 +80,164 @@ body {
   opacity: 0.8;
 }
 
-
-h2 {
-  color: #333;
+.home-section h1{
+text-align: left;
+margin-left: 5%;
 }
 
-div {
-  padding: 2rem;
+/* Footer Styling */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #333;
+  color: white;
+  font-size: 1.5em;
+  bottom: 0;
+  height: auto;
+  padding: 1%;
 }
 
-footer {
-  padding: 20px 0;
-  background-color: #f8f9fa; 
-}
-
-footer a {
-  color: #007bff;
+.footer a{
   text-decoration: none;
+  color: white;
 }
 
-footer a:hover {
+.footer a:hover {
   text-decoration: underline;
 }
-
-footer .row {
-  padding-top: 10px;
-}
-
+/* Styling for about us page */
 .about-us-section {
-  padding: 40px 0; 
-  background-color: #f8f9fa; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  background-color: #f9f9f9; /* Optional background color for contrast */
+  margin: 0 auto;
+  max-width: 80%; /* Adjust width for centering */
+  gap: 20px;
 }
 
-.about-us-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.about-us-text {
+  flex: 1;
 }
 
-.about-us-text p {
-  font-size: 1.125rem;
-  line-height: 1.6;
+.about-us-image {
+  flex: 1;
 }
 
 .about-us-image img {
   max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional for rounded image corners */
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+  }
+}
+
+/* Css for form containers */
+/* General form container styling */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background: white;
   border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="checkbox"],
+textarea,
+button {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.signup-prompt,
+form p {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
+/* sign up page styling */
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.signup-options {
+  display: flex;
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
 }
 
 .volunteer-form {
@@ -155,4 +285,26 @@ footer .row {
 .volunteer-form button:hover {
   background-color: #0056b3;
 }
+
+
+.signup-image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.signup-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: #0056b3;
+}
+
 

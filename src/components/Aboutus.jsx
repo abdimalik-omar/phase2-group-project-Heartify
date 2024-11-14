@@ -4,9 +4,9 @@ import Aboutimage from '../assets/images/Aboutimage.jpeg';
 export default function Aboutus(){
    return(
       <>
-      <section className="about-us-section d-flex align-items-center">
+      <section className="about-us-section">
          
-         <div className="about-us-text col-md-6">
+         <div className="about-us-text">
             <h2>About Us</h2>
             <p>
                Our organization is dedicated to making a positive impact in the community.
@@ -17,7 +17,7 @@ export default function Aboutus(){
          </div>
          
         
-         <div className="about-us-image col-md-6">
+         <div className="about-us-image">
             <img src={Aboutimage} alt="About Us" className="img-fluid" />
          </div>
       </section>

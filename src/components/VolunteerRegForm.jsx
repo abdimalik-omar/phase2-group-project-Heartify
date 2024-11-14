@@ -8,10 +8,12 @@ const VolunteerRegForm = () => {
     telephone: "",
     county: "",
     experience: "",
+    password: "",
+    confirmPassword: "",
     terms: false,
   });
+  const [formMessage, setFormMessage] = useState("");
 
-  // Handle form changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
@@ -20,23 +22,27 @@ const VolunteerRegForm = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!formData.terms) {
-      alert("You must agree to the terms to proceed.");
+      setFormMessage("You must agree to the terms to proceed.");
+      return;
+    }
+    if (formData.password !== formData.confirmPassword) {
+      setFormMessage("Passwords do not match.");
       return;
     }
 
     try {
-      const response = await fetch("https://phase2-group-project-heartify-backend.onrender.com/user", {
+      const response = await fetch("http://localhost:3000/user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      
+
       if (response.ok) {
-        alert("Thank you for signing up!");
+        setFormMessage("Thank you for signing up!");
         setFormData({
           firstName: "",
           lastName: "",
@@ -44,19 +50,22 @@ const VolunteerRegForm = () => {
           telephone: "",
           county: "",
           experience: "",
+          password: "",
+          confirmPassword: "",
           terms: false,
         });
       } else {
-        alert("There was a problem with your submission.");
+        setFormMessage("There was a problem with your submission.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error submitting form");
+      setFormMessage("Error submitting form. Please try again.");
     }
   };
 
   return (
-    <div className="volunteer_reg_form">
+    <div className="form-container">
+      <div className="form-box">
       <h1>VOLUNTEER SIGN UP FORM</h1>
       <p>Sign up to access volunteer opportunities that have been posted by different organizations</p>
       <form onSubmit={handleSubmit}>
@@ -68,6 +77,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter first name"
           value={formData.firstName}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="lname">Last Name: </label>
@@ -78,6 +88,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter last name"
           value={formData.lastName}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="email">Email: </label>
@@ -88,6 +99,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter your email address"
           value={formData.email}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="tphone">Telephone: </label>
@@ -98,6 +110,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter telephone number"
           value={formData.telephone}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="county">County of Residence: </label>
@@ -108,6 +121,7 @@ const VolunteerRegForm = () => {
           placeholder="Enter County of Residence"
           value={formData.county}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="experience">Volunteer Experience: </label>
@@ -118,6 +132,28 @@ const VolunteerRegForm = () => {
           placeholder="Enter volunteer experience"
           value={formData.experience}
           onChange={handleChange}
+        />
+        <br />
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+        <br />
+        <label htmlFor="confirmPassword">Confirm Password: </label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required
         />
         <br />
         <input
@@ -131,6 +167,8 @@ const VolunteerRegForm = () => {
         <br />
         <button type="submit">Sign Up</button>
       </form>
+      {formMessage && <p>{formMessage}</p>}
+      </div>
     </div>
   );
 };
