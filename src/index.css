@@ -94,7 +94,7 @@ margin-left: 5%;
   color: white;
   font-size: 1.5em;
   bottom: 0;
-  height: 20%;
+  height: auto;
   padding: 1%;
 }
 
@@ -106,23 +106,37 @@ margin-left: 5%;
 .footer a:hover {
   text-decoration: underline;
 }
-
+/* Styling for about us page */
 .about-us-section {
-  padding: 40px 0; 
-  background-color: #f8f9fa; 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  background-color: #f9f9f9; /* Optional background color for contrast */
+  margin: 0 auto;
+  max-width: 80%; /* Adjust width for centering */
+  gap: 20px;
 }
 
-.about-us-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.about-us-text {
+  flex: 1;
 }
 
-.about-us-text p {
-  font-size: 1.125rem;
-  line-height: 1.6;
+.about-us-image {
+  flex: 1;
 }
 
 .about-us-image img {
   max-width: 100%;
-  border-radius: 8px;
+  height: auto;
+  border-radius: 8px; /* Optional for rounded image corners */
 }
+
+@media (max-width: 768px) {
+  .about-us-section {
+    flex-direction: column; /* Stacks items vertically on smaller screens */
+  }
+}
+
