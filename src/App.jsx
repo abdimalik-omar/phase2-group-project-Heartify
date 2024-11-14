@@ -3,12 +3,13 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import SignUpPage from './components/SignUpPage';
 import LogIn from './components/LogIn';
-import Aboutus from './components/Aboutus';
-import VolunteerRegForm from './components/VolunteerRegForm';
-import OrganizationRegForm from './components/OrganizationRegForm';
-import ContactUs from './components/ContactUs';
-import IndividualDashboard from './components/IndividualDashboard'; // Import Volunteer Dashboard
-import './App.css';
+import Aboutus from './components/Aboutus'; // Import Aboutus component
+import VolunteerRegForm from './components/VolunteerRegForm'; // Import VolunteerRegForm component
+import OrganizationRegForm from './components/OrganizationRegForm'; // Import OrganizationRegForm component
+import ContactUs from './components/ContactUs'; // Import ContactUs component
+import './App.css'
+import Organization from './components/Organization';
+import IndividualDashboard from './components/IndividualDashboard';
 
 function App() {
   return (
