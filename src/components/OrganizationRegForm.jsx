@@ -60,7 +60,8 @@ const OrganizationRegForm = () => {
   };
 
   return (
-    <div className="organization_reg_form">
+    <div className="form-container">
+      <div className="form-box">
       <h1>ORGANIZATION SIGN UP FORM</h1>
       <p>Sign up to post volunteer opportunities.</p>
       <form onSubmit={handleSubmit}>
@@ -141,6 +142,7 @@ const OrganizationRegForm = () => {
         <button type="submit">Sign Up</button>
       </form>
       {formMessage && <p>{formMessage}</p>}
+      </div>
     </div>
   );
 };
