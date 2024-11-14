@@ -10,7 +10,7 @@ export default function Layout() {
       <div className="container">
         <Outlet />    {/* Dynamically load page content based on current route */}
       </div>
-      <Footer /> {/* Footer rendered consistently */}
+      <Footer /> 
     </>
   );
 }

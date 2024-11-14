@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/Organization" element={<Organization />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/about" element={<Aboutus />} />
           <Route path="/contact" element={<ContactUs />} />
