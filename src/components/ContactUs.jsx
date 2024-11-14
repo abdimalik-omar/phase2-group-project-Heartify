@@ -52,7 +52,8 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact_us_form">
+    <div className="form-container">
+      <div className="form-box">
       <h1>CONTACT US FORM</h1>
       <p>Fill the form to contact us.</p>
       <form onSubmit={handleSubmit}>
@@ -111,6 +112,7 @@ const ContactUs = () => {
         <button type="submit">Submit</button>
       </form>
       {formMessage && <p>{formMessage}</p>}
+      </div>
     </div>
   );
 };
