@@ -9,7 +9,7 @@ import OrganizationRegForm from './components/OrganizationRegForm'; // Import Or
 import ContactUs from './components/ContactUs'; // Import ContactUs component
 import './App.css'
 import Organization from './components/Organization';
-
+import IndividualDashboard from './components/IndividualDashboard';
 
 function App() {
   return (
