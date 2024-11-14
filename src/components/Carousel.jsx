@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Slide1 from '../assets/images/Slide1.webp';
-import Slide2 from '../assets/images/Slide2.webp';
+import Slide2 from '../assets/images/Slide2.avif';
 import Slide3 from '../assets/images/Slide3.webp';
 
 export default function Carousel() {
   const slides = [Slide1, Slide2, Slide3]; // Array of slides
   const [currentSlide, setCurrentSlide] = useState(0); // State to track the current slide
 
-  // Change slide every 3 seconds (you can adjust the timing)
+    // Change slide every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 3000); // 3000ms = 3 seconds
+    }, 3000); 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [slides.length]);
 
