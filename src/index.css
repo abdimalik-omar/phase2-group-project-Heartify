@@ -2,18 +2,35 @@
 body {
   background-image: url('../src/assets/images/backgroungimage.avif'); 
   background-size: cover;       
-  background-repeat: no-repeat; 
-  
-
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center; 
 }
+
+/* Navbar Styling */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 30px 20px;
   background-color: #333;
   color: #fff;
   font-family: Arial, sans-serif;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 10px 5px;
+}
+
+.navbar a:hover {
+  background-color: #555;
 }
 
 .navbar-icon img {
@@ -63,31 +80,31 @@ body {
   opacity: 0.8;
 }
 
-
-h2 {
-  color: #333;
+.home-section h1{
+text-align: left;
+margin-left: 5%;
 }
 
-div {
-  padding: 2rem;
+/* Footer Styling */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #333;
+  color: white;
+  font-size: 1.5em;
+  bottom: 0;
+  height: 20%;
+  padding: 1%;
 }
 
-footer {
-  padding: 20px 0;
-  background-color: #f8f9fa; 
-}
-
-footer a {
-  color: #007bff;
+.footer a{
   text-decoration: none;
+  color: white;
 }
 
-footer a:hover {
+.footer a:hover {
   text-decoration: underline;
-}
-
-footer .row {
-  padding-top: 10px;
 }
 
 .about-us-section {
