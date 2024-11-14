@@ -8,6 +8,7 @@ import VolunteerRegForm from './components/VolunteerRegForm'; // Import Voluntee
 import OrganizationRegForm from './components/OrganizationRegForm'; // Import OrganizationRegForm component
 import ContactUs from './components/ContactUs'; // Import ContactUs component
 import './App.css'
+import Organization from './components/Organization';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/Organization" element={<Organization />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/about" element={<Aboutus />} />
           <Route path="/contact" element={<ContactUs />} /> {/* Add ContactUs route */}
