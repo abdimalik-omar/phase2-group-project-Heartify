@@ -852,4 +852,27 @@ background: green;
   background-image: url('./assets/contributor-4.png');
   background-size: cover;
 }
+.organization-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.volunteer-form {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.applicants-container {
+  flex: 1;
+  background-color: #e9f7ef;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 
