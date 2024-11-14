@@ -605,6 +605,10 @@ background: green;
 .individual-dashboard-container {
   display: flex;
   gap: 20px;
+/* Overall container */
+.individual-dashboard-container {
+  display: flex;
+  gap: 20px;
   margin: auto;
   width: 95%;
   padding: 20px;
@@ -852,4 +856,3 @@ background: green;
   background-image: url('./assets/contributor-4.png');
   background-size: cover;
 }
-
