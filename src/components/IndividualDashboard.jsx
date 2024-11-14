@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
+import profileImage from '../assets/profile.jpeg';
+
 
 
 const IndividualDashboard = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="dashboard-container">
+    <div className="individual-dashboard-container">
+      {/* left side bar */}
+      <div className="user-profile">
+        <br/>
+        <img src={profileImage} alt="image here"></img>
+        <h2>username</h2>
+      </div>
       {/* Left Section: User Form */}
       <div className="left-section">
         <h2>User Details</h2>
