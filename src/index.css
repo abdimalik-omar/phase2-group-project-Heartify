@@ -263,11 +263,12 @@ form p {
 /* individual dashboard */
 .individual-dashboard-container{
   /* background: green; */
-  margin: 0 auto;
-  width: 90%;
+  margin: auto;
+  width: 95%;
 }
 
 .user-profile{
+  float: left;
   margin-top: 2%;
   height: 60vh;
   width: 20vw;
@@ -276,5 +277,14 @@ form p {
 
 .user-profile img{
   border-radius: 80px;
+  width: 90%;
+}
+
+.content-dashboard{
+margin-top: 2%;
+float: right;
+width: 58vw;
+height: 60vh;
+background: green;
 }
 
