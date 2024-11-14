@@ -6,13 +6,14 @@ export default function Home() {
 
   // Fetch organization data from the local server
   useEffect(() => {
-    fetch("http://localhost:5000/students")
+    fetch("http://localhost:3000/organization")
       .then((res) => res.json())
       .then((data) => setOrganization(data));
   }, []);
 
   return (
-    <div>
+    <div className='home-section'>
+        <h1>Heartify</h1>
       {/* Carousel Component */}
       <section className="carousel-section">
         <Carousel />  {/* Render Carousel component */}
@@ -20,7 +21,6 @@ export default function Home() {
 
       {/* About Us Section */}
       <section className="about-us">
-        <h2>About Us</h2>
         <p>
           Welcome to our organization. We are committed to making a difference
           in our community by connecting volunteers with meaningful projects.
