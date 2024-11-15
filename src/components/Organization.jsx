@@ -17,9 +17,9 @@ const Organization = () => {
 
   const [opportunities, setOpportunities] = useState([]);
   const [applicants, setApplicants] = useState([]);
+  const organizationId = "3876"; // Replace with the actual organization ID
 
   useEffect(() => {
-    // Fetch applicants data from the user endpoint
     const fetchApplicants = async () => {
       try {
         const response = await fetch('http://localhost:3000/user');
@@ -38,29 +38,58 @@ const Organization = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setOpportunities([...opportunities, { ...formData, id: Date.now().toString() }]);
-    setFormData({
-      organizationName: '',
-      opportunityTitle: '',
-      description: '',
-      location: '',
-      duration: '',
-      startDate: '',
-      requirements: '',
-      contactEmail: '',
-      applicationDeadline: '',
-      benefits: '',
-      volunteerType: 'in-person',
-    });
+    const newOpportunity = {
+      id: Date.now().toString(),
+      title: formData.opportunityTitle,
+      description: formData.description,
+      location: formData.location,
+      duration: formData.duration,
+      startDate: formData.startDate,
+      requirements: formData.requirements,
+      contactEmail: formData.contactEmail,
+      applicationDeadline: formData.applicationDeadline,
+      benefits: formData.benefits,
+      volunteerType: formData.volunteerType,
+    };
+
+    try {
+      // Patch request to update volunteerOpportunities
+      await fetch(`http://localhost:3000/organization/${organizationId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          volunteerOpportunities: [...opportunities, newOpportunity],
+        }),
+      });
+
+      // Update local state
+      setOpportunities([...opportunities, newOpportunity]);
+      setFormData({
+        organizationName: '',
+        opportunityTitle: '',
+        description: '',
+        location: '',
+        duration: '',
+        startDate: '',
+        requirements: '',
+        contactEmail: '',
+        applicationDeadline: '',
+        benefits: '',
+        volunteerType: 'in-person',
+      });
+    } catch (error) {
+      console.error('Error adding opportunity:', error);
+    }
   };
 
   const deleteOpportunity = (id) => {
     setOpportunities(opportunities.filter((opportunity) => opportunity.id !== id));
   };
 
-  // Function to get applicants for a specific opportunity
   const getApplicantsForOpportunity = (opportunityId) => {
     return applicants.flatMap((applicant) =>
       applicant.applications
