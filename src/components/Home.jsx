@@ -5,7 +5,7 @@ export default function Home() {
 
   // Fetch organization data from the local server
   useEffect(() => {
-    fetch("http://localhost:3000/organization")
+    fetch("https://phase2-group-project-heartify-backend.onrender.com/organization")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched organizations:", data); // Check the data received

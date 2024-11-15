@@ -27,7 +27,7 @@ const ContactUs = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/contactus", {
+      const response = await fetch("https://phase2-group-project-heartify-backend.onrender.com/contactus", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
