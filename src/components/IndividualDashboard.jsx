@@ -37,7 +37,7 @@ const IndividualDashboard = () => {
         applicationDate: new Date().toISOString(),
       };
 
-      fetch(`http://localhost:3000/user/${user.id}`, {
+      fetch(`https://phase2-group-project-heartify-backend.onrender.com/user/${user.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ const IndividualDashboard = () => {
   // Delete Account with Confirmation
   const handleDeleteAccount = () => {
     if (window.confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
-      fetch(`http://localhost:3000/user/${user.id}`, {
+      fetch(`https://phase2-group-project-heartify-backend.onrender.com/user/${user.id}`, {
         method: 'DELETE',
       })
         .then(response => {

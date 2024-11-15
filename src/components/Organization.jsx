@@ -22,7 +22,7 @@ const Organization = () => {
   useEffect(() => {
     const fetchApplicants = async () => {
       try {
-        const response = await fetch('http://localhost:3000/user');
+        const response = await fetch('https://phase2-group-project-heartify-backend.onrender.com/user');
         const data = await response.json();
         setApplicants(data.user);
       } catch (error) {
@@ -56,7 +56,7 @@ const Organization = () => {
 
     try {
       // Patch request to update volunteerOpportunities
-      await fetch(`http://localhost:3000/organization/${organizationId}`, {
+      await fetch(`https://phase2-group-project-heartify-backend.onrender.com/organization/${organizationId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
