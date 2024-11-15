@@ -54,3 +54,6 @@ Start the React application:
 Kevin Bett (MAIN): https://github.com/BettKev/phase2-group-project-Heartify.git
 Felister Kiragu: https://github.com/fel-ly88/phase2-group-project-Heartify.git
 Abdimalik Omar: https://github.com/abdimalik-omar/phase2-group-project-Heartify.git
+
+# Deployment link
+https://phase2-group-project-heartify.vercel.app/
