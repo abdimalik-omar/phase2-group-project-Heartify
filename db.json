@@ -13,24 +13,12 @@
       "terms": true,
       "applications": [
         {
-          "opportunityId": "1",
-          "opportunityTitle": "Volunteer Coordinator",
-          "opportunityDescription": "Help organize and coordinate volunteer efforts.",
-          "applicationDate": "2024-11-14T07:03:32.775Z"
+          "opportunityId": "1731648302916",
+          "opportunityTitle": "dfhgjkhjgfhdgjhk",
+          "opportunityDescription": "fdghkjlkhkgjfdhgh",
+          "applicationDate": "2024-11-15T05:31:12.107Z"
         }
       ]
-    },
-    {
-      "id": "c250",
-      "firstName": "Kevin",
-      "lastName": "Daniel",
-      "email": "prodigy4614@gmail.com",
-      "telephone": "0707759220",
-      "county": "Kiambu",
-      "experience": "Red Cross",
-      "password": "1",
-      "confirmPassword": "1",
-      "terms": true
     }
   ],
   "organization": [
@@ -45,14 +33,29 @@
       "terms": true,
       "volunteerOpportunities": [
         {
-          "id": "1",
-          "title": "Volunteer Coordinator",
-          "description": "Help organize and coordinate volunteer efforts.",
-          "location": "Nairobi, Kenya"
+          "id": "1731648302916",
+          "title": "dfhgjkhjgfhdgjhk",
+          "description": "fdghkjlkhkgjfdhgh",
+          "location": "fghjkhgfhdgh",
+          "duration": "4",
+          "startDate": "2024-11-28",
+          "requirements": "dfghkjlhkgjfdhghjk",
+          "contactEmail": "example@email.com",
+          "applicationDeadline": "2024-11-30",
+          "benefits": "fhghkjlkhkgjfdhghkjlk",
+          "volunteerType": "in-person"
         }
       ]
     }
   ],
   "contactus": [
+    {
+      "id": "14b2",
+      "fullname": "testuser1",
+      "contact_email": "testuser1@example.com",
+      "tphone": "1111111111",
+      "comments": "Good job",
+      "accept": true
+    }
   ]
 }

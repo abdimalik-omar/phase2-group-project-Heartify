@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
+import { useNavigate } from 'react-router-dom';
 import profileImage from '../assets/profile.jpeg';
 
 const IndividualDashboard = () => {
   const [showModal, setShowModal] = useState(false);
   const [opportunities, setOpportunities] = useState([]);
-  const [selectedOpportunity, setSelectedOpportunity] = useState(null); // Track selected opportunity
-  const [user, setUser] = useState(null); // Store logged-in user details
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
-  // Fetch volunteer opportunities from the organization endpoint
+  // Fetch volunteer opportunities
   useEffect(() => {
     fetch("http://localhost:3000/organization")
       .then(response => response.json())
@@ -20,18 +19,15 @@ const IndividualDashboard = () => {
       .catch(error => console.error("Error fetching volunteer opportunities:", error));
   }, []);
 
-  // Fetch user data to associate the application with the logged-in user
+  // Fetch user data
   useEffect(() => {
     fetch("http://localhost:3000/user")
       .then(response => response.json())
-      .then(data => {
-        // Assuming the user is the first user in the list, or you can adjust based on logged-in user
-        setUser(data[0]);
-      })
+      .then(data => setUser(data[0])) // Adjust based on actual user authentication setup
       .catch(error => console.error("Error fetching user data:", error));
   }, []);
 
-  // Handle volunteer application
+  // Apply to an opportunity
   const handleApply = (opportunity) => {
     if (user) {
       const applicationData = {
@@ -41,19 +37,22 @@ const IndividualDashboard = () => {
         applicationDate: new Date().toISOString(),
       };
 
-      // Send a PATCH request to update the user's data with the application
       fetch(`http://localhost:3000/user/${user.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          applications: [...(user.applications || []), applicationData], // Add the new application to the user's applications
+          applications: [...(user.applications || []), applicationData],
         }),
       })
         .then(response => response.json())
         .then(data => {
           console.log('Application submitted successfully:', data);
+          setUser(prevUser => ({
+            ...prevUser,
+            applications: [...(prevUser.applications || []), applicationData],
+          }));
           alert('Application submitted successfully!');
         })
         .catch(error => {
@@ -63,12 +62,28 @@ const IndividualDashboard = () => {
     }
   };
 
-  // Handle logout
+  // Logout functionality
   const handleLogout = () => {
-    // Clear any user state (optional)
     setUser(null);
-    // Navigate to home page
     navigate('/');
+  };
+
+  // Delete Account with Confirmation
+  const handleDeleteAccount = () => {
+    if (window.confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+      fetch(`http://localhost:3000/user/${user.id}`, {
+        method: 'DELETE',
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Account deleted successfully');
+            navigate('/'); // Redirect to homepage after deletion
+          } else {
+            console.error('Error deleting account');
+          }
+        })
+        .catch(error => console.error('Error deleting account:', error));
+    }
   };
 
   return (
@@ -80,6 +95,10 @@ const IndividualDashboard = () => {
         <h2>{user ? `${user.firstName} ${user.lastName}` : 'Loading...'}</h2>
         {/* Logout Button */}
         <button onClick={handleLogout}>Logout</button>
+        {/* Delete Account Button */}
+        <button onClick={handleDeleteAccount} className="delete-account-button">
+          Delete Account
+        </button>
       </div>
 
       {/* Content Dashboard */}
@@ -107,7 +126,7 @@ const IndividualDashboard = () => {
         <ul className="contributor-list">
           {[...Array(4)].map((_, index) => (
             <li key={index} className="contributor-card">
-              <div className="image-placeholder">Image {index + 1}</div>
+              <div className="image-placeholder"></div>
               <div className="contributor-info">
                 <h3>Name Placeholder</h3>
                 <p>Contribution Placeholder</p>
