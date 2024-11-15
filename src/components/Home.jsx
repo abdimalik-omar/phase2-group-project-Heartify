@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Carousel from './Carousel';  // Import Carousel component
 
 export default function Home() {
   const [organization, setOrganization] = useState([]);
@@ -14,16 +13,11 @@ export default function Home() {
   return (
     <div className='home-section'>
         <h1>Heartify</h1>
-      {/* Carousel Component */}
-      <section className="carousel-section">
-        <Carousel />  {/* Render Carousel component */}
-      </section>
 
       {/* About Us Section */}
       <section className="about-us">
         <p>
-          Welcome to our organization. We are committed to making a difference
-          in our community by connecting volunteers with meaningful projects.
+        Join us in making a profound difference by empowering communities, supporting meaningful causes, and creating lasting change that impacts lives across the globe. Through our platform, you can discover volunteer opportunities thoughtfully tailored to match your unique passions, skills, and commitment to service. Be part of a powerful movement that inspires hope, fosters growth, and builds resilience in those who need it most. Together, we can bridge gaps, uplift communities, and create a brighter future for generations to come.
         </p>
       </section>
 
