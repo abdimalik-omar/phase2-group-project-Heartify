@@ -75,10 +75,17 @@
       "terms": true,
       "volunteerOpportunities": [
         {
-          "id": "1",
-          "title": "Volunteer Coordinator",
-          "description": "Help organize and coordinate volunteer efforts.",
-          "location": "Nairobi, Kenya"
+          "id": "1731648302916",
+          "title": "dfhgjkhjgfhdgjhk",
+          "description": "fdghkjlkhkgjfdhgh",
+          "location": "fghjkhgfhdgh",
+          "duration": "4",
+          "startDate": "2024-11-28",
+          "requirements": "dfghkjlhkgjfdhghjk",
+          "contactEmail": "example@email.com",
+          "applicationDeadline": "2024-11-30",
+          "benefits": "fhghkjlkhkgjfdhghkjlk",
+          "volunteerType": "in-person"
         }
       ]
     },
