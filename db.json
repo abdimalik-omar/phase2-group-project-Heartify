@@ -81,8 +81,17 @@
           "location": "Nairobi, Kenya"
         }
       ]
+    },
+    {
+      "id": "3b18",
+      "organizationName": "testorganization2",
+      "email": "testorg2@example.com",
+      "telephone": "1111111111",
+      "website": "https://test.org2.com",
+      "password": "1",
+      "confirmPassword": "1",
+      "terms": true
     }
   ],
-  "contactus": [
-  ]
+  "contactus": []
 }
