@@ -27,8 +27,8 @@ export default function LogIn() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const isUserValid = await verifyLogin("http://localhost:3000/user");
-    const isOrganizationValid = await verifyLogin("http://localhost:3000/organization");
+    const isUserValid = await verifyLogin("https://phase2-group-project-heartify-backend.onrender.com/user");
+    const isOrganizationValid = await verifyLogin("https://phase2-group-project-heartify-backend.onrender.com/organization");
 
     if (isUserValid) {
       alert("Login successful!");

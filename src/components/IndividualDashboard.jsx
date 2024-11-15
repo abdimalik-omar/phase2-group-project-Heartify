@@ -10,7 +10,7 @@ const IndividualDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/organization")
+    fetch("https://phase2-group-project-heartify-backend.onrender.com/organization")
       .then(response => response.json())
       .then(data => {
         const volunteerOpportunities = data.flatMap(org => org.volunteerOpportunities || []);
@@ -20,7 +20,7 @@ const IndividualDashboard = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3000/user")
+    fetch("https://phase2-group-project-heartify-backend.onrender.com/user")
       .then(response => response.json())
       .then(data => {
         setUser(data[0]);
