@@ -34,15 +34,15 @@
       "volunteerOpportunities": [
         {
           "id": "1731648302916",
-          "title": "dfhgjkhjgfhdgjhk",
-          "description": "fdghkjlkhkgjfdhgh",
-          "location": "fghjkhgfhdgh",
+          "title": "Teacher",
+          "description": "Good teacher",
+          "location": "Kenya",
           "duration": "4",
           "startDate": "2024-11-28",
-          "requirements": "dfghkjlhkgjfdhghjk",
+          "requirements": "Good",
           "contactEmail": "example@email.com",
           "applicationDeadline": "2024-11-30",
-          "benefits": "fhghkjlkhkgjfdhghkjlk",
+          "benefits": "Good",
           "volunteerType": "in-person"
         }
       ]
