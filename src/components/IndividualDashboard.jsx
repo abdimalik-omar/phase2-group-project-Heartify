@@ -10,7 +10,7 @@ const IndividualDashboard = () => {
 
   // Fetch volunteer opportunities
   useEffect(() => {
-    fetch("http://localhost:3000/organization")
+    fetch("https://phase2-group-project-heartify-backend.onrender.com/organization")
       .then(response => response.json())
       .then(data => {
         const volunteerOpportunities = data.flatMap(org => org.volunteerOpportunities || []);
@@ -21,7 +21,7 @@ const IndividualDashboard = () => {
 
   // Fetch user data
   useEffect(() => {
-    fetch("http://localhost:3000/user")
+    fetch("https://phase2-group-project-heartify-backend.onrender.com/user")
       .then(response => response.json())
       .then(data => setUser(data[0])) // Adjust based on actual user authentication setup
       .catch(error => console.error("Error fetching user data:", error));
